@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from courses.models import Subject, Module, Course
+from courses.models import Subject, Module, Course, Content
 
 
 @admin.register(Subject)
@@ -23,3 +23,8 @@ class CourseAdmin(admin.ModelAdmin):
 	search_fields = ('overview', 'title')
 	prepopulated_fields = {'slug': ('title',)}
 	inlines = (ModuleTabular,)
+
+
+@admin.register(Content)
+class ContentAdmin(admin.ModelAdmin):
+	list_display = ('content_type', 'module', 'object_id')
