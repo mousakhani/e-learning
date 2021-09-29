@@ -38,6 +38,7 @@ class Module(models.Model):
 	title = models.CharField(max_length=200)
 	slug = models.SlugField(max_length=200, unique=True)
 	order = OrderField(blank=True, for_fields=['course', ])
+	description=models.TextField()
 
 	class Meta:
 		ordering = ['order', ]
