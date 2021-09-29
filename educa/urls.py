@@ -22,4 +22,5 @@ urlpatterns = [
 	path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
 	path('admin/', admin.site.urls),
 	path('course/', include('courses.urls')),
+	path('api/', include('courses.api.urls', namespace='api')),
 ]
