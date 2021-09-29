@@ -37,6 +37,8 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 
 	'courses',
+	'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,11 @@ AUTH_USER_MODEL = 'auth.User'
 FIXTURE_DIRS = [
 	'courses/fixtures',
 ]
+
+
+
+RESF_FRAMEWORK={
+	'DEFAULT_PERMISSON_CLASSES':[
+		'rest_frameowrk.permissions.DjangoModelPermissionsOrAnonReadOnly',
+	]
+}
