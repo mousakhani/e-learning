@@ -3,8 +3,10 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 
-
 # Create your models here.
+from courses.fields import OrderField
+
+
 class Subject(models.Model):
 	title = models.CharField(max_length=200)
 	slug = models.SlugField(max_length=200, unique=True)
@@ -35,18 +37,26 @@ class Module(models.Model):
 	course = models.ForeignKey(Course, models.CASCADE, related_name='modules')
 	title = models.CharField(max_length=200)
 	slug = models.SlugField(max_length=200, unique=True)
+	order = OrderField(blank=True, for_fields=['course', ])
+
+	class Meta:
+		ordering = ['order', ]
 
 	def __str__(self):
-		return self.title
+		return f'{self.order}. {self.title}'
 
 
 class Content(models.Model):
 	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='contents')
 	content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to={
-		'model__in':('text', 'file', 'video', 'image')
+		'model__in': ('text', 'file', 'video', 'image')
 	})
 	object_id = models.PositiveIntegerField()
 	item = GenericForeignKey('content_type', 'object_id')
+	order = OrderField(blank=True, for_fields=['module', ])
+
+	class Meta:
+		ordering = ['order', ]
 
 
 class ItemBase(models.Model):
