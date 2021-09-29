@@ -135,10 +135,11 @@ FIXTURE_DIRS = [
 	'courses/fixtures',
 ]
 
-
-
-RESF_FRAMEWORK={
-	'DEFAULT_PERMISSON_CLASSES':[
-		'rest_frameowrk.permissions.DjangoModelPermissionsOrAnonReadOnly',
+RESF_FRAMEWORK = {
+	'DEFAULT_PERMISSON_CLASSES': [
+		'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+	],
+	'DEFAULT_RENDERER_CLASSES': [
+		'rest_framework.renderers.JSONRenderer',
 	]
 }
