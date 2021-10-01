@@ -26,9 +26,7 @@ class Course(models.Model):
 	slug = models.SlugField(max_length=200, unique=True)
 	overview = models.TextField()
 	created = models.DateTimeField(auto_now_add=True)
-	students = models.ManyToManyField(User,
-	                                  related_name='courses_joined',
-	                                  blank=True)
+	students = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='courses_joined', blank=True)
 
 	class Meta:
 		ordering = ('-created',)
@@ -54,8 +52,7 @@ class Module(models.Model):
 class Content(models.Model):
 	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='contents')
 	content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to={
-		'model__in': ('text', 'file', 'video', 'image')
-	})
+		'model__in': ('text', 'file', 'video', 'image')})
 	object_id = models.PositiveIntegerField()
 	item = GenericForeignKey('content_type', 'object_id')
 	order = OrderField(blank=True, for_fields=['module', ])
