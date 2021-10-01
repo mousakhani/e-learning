@@ -74,6 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'educa.wsgi.application'
+ASGI_APPLICATION= 'educa.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
