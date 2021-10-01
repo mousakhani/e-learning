@@ -7,5 +7,7 @@
 <li>سفارشی سازی پنل ادمین</li>
 <li>استفاده از rest_framework</li>
 <li>JWTAuthentication</li>
+<li>کار با webSocket و اپ channels  برای ساخت چت روم برای استفاده ی
+دانش آموزان مربوط به یک دوره</li>
 </ul>
 </div>
