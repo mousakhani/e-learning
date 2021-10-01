@@ -44,7 +44,7 @@ class ModuleWithContentSerializer(serializers.ModelSerializer):
 		fields = ['order', 'title', 'description', 'contents']
 
 
-class CourseWithContentSerializer(serializers.ModelSerializer):
+class CourseWithContentsSerializer(serializers.ModelSerializer):
 	modules = ModuleWithContentSerializer(many=True)
 
 	class Meta:

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
 	'courses',
 	'rest_framework',
+	'rest_framework.authtoken',
 
 ]
 
@@ -135,7 +136,10 @@ FIXTURE_DIRS = [
 	'courses/fixtures',
 ]
 
-RESF_FRAMEWORK = {
+REST_FRAMEWORK = {
+	'DEFAULT_AUTHENTICATION_CLASSES': [
+		'rest_framework_simplejwt.authentication.JWTAuthentication',
+	],
 	'DEFAULT_PERMISSON_CLASSES': [
 		'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
 	],
