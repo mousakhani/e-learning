@@ -13,4 +13,6 @@
 {% endblock %}
 
 {% block domready %}
+    var url='ws://'+window.location.host+'/ws/chat/room/'+ '{{ course.id }}/';
+    var charSocket=new WebSocket(url);
 {% endblock %}
