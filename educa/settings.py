@@ -74,7 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'educa.wsgi.application'
-ASGI_APPLICATION= 'educa.routing.application'
+ASGI_APPLICATION = 'educa.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -143,10 +143,20 @@ REST_FRAMEWORK = {
 	'DEFAULT_AUTHENTICATION_CLASSES': [
 		'rest_framework_simplejwt.authentication.JWTAuthentication',
 	],
-	'DEFAULT_PERMISSON_CLASSES': [
+	'DEFAULT_PERMISSION_CLASSES': [
 		'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
 	],
 	'DEFAULT_RENDERER_CLASSES': [
 		'rest_framework.renderers.JSONRenderer',
 	]
+}
+
+# First install channels-redis
+CHANNEL_LAYERS = {
+	'default': {
+		'BACKEND': 'channels_redis.core.RedisChannelLayer',
+		'CONFIG': {
+			'hosts': [('127.0.0.1', 6379), ]
+		}
+	}
 }
