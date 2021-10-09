@@ -1,3 +1,4 @@
+import channels.layers
 from django.shortcuts import get_object_or_404
 from rest_framework import generics, viewsets
 from rest_framework.decorators import action
@@ -16,6 +17,7 @@ class SubjectListView(generics.ListAPIView):
 
 
 class SubjectDetailView(generics.RetrieveAPIView):
+	permission_classes = [IsAuthenticated, ]
 	queryset = Subject.objects.all()
 	serializer_class = SubjectSerializer
 
