@@ -9,5 +9,8 @@
 <li>JWTAuthentication</li>
 <li>کار با webSocket و اپ channels  برای ساخت چت روم برای استفاده ی
 دانش آموزان مربوط به یک دوره</li>
+  <li>
+    <img src="https://github.com/mousakhani/e-learning/blob/master/media/images/chat.PNG" style='width:2rem;' />
+  </li>
 </ul>
 </div>
