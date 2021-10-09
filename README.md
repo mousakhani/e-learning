@@ -8,9 +8,9 @@
 <li>استفاده از rest_framework</li>
 <li>JWTAuthentication</li>
 <li>کار با webSocket و اپ channels  برای ساخت چت روم برای استفاده ی
-دانش آموزان مربوط به یک دوره</li>
-  <li>
-    <img src="https://github.com/mousakhani/e-learning/blob/master/media/images/chat.PNG" style='width:2rem;' />
-  </li>
+دانش آموزان مربوط به یک دوره</li>                                                                         
 </ul>
+
+<h2>نمونه چت انجام شده</h2>
+   <a href="https://uupload.ir/view/chat_rtpa.png" target="_blank"><img src="https://s4.uupload.ir/files/chat_rtpa.png" border="0" alt="آپلود عکس"  style="width:100%;" /></a>
 </div>
