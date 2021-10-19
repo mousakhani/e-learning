@@ -14,6 +14,8 @@ ADMINS = (
 
 DATABASES = {
     'default': {
+        'USER': 'educa',
+        'PASSOWRD': 'mwE1A34rF'
 
     }
 }
