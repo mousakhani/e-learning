@@ -1,6 +1,6 @@
 from .base import *
 from educa.settings.local import DATABASES, DEBUG
-
+import os
 
 DEBUG = False
 
@@ -15,11 +15,11 @@ ADMINS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'NAME': 'educa',
-        'USER': 'educa',
-        'PASSWORD': 'mA12#',
+        'HOST': os.environ['DB_HOST'],
+        'PORT': os.environ['DB_PORT'],
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
 
     }
 }
