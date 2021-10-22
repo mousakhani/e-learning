@@ -1,11 +1,11 @@
 from .base import *
 from educa.settings.local import DATABASES, DEBUG
-import os
+from .secure_keys import *
 
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['*', ]
+ALLOWED_HOSTS = ['localhost', ]
 
 ADMINS = (
     ('morteza mousakhani', 'khodemousa@gmail.com'),
@@ -15,11 +15,10 @@ ADMINS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ['DB_HOST'],
-        'PORT': os.environ['DB_PORT'],
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASSWORD'],
-
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
     }
 }
